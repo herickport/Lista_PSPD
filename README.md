@@ -85,7 +85,7 @@ Após a execução será gerada uma imagem com o nome: `out_julia_omp`.
 
 Para a comparação entre os programas foi utilizado o cluster `chococino`, rodando a partir da máquina cm1 e com 10000 linhas no fractal. Para a obtenção do tempo de execução, foi utilizada a função `time`, calculando a média entre 3 execuções.
 
-#### Tabela de comparação com 1 processo/thread
+#### Tabela de comparação com 1 processo/thread:
 
 | Programa           | QTD Processos/Threads | Tempo de Execução |
 | ------------------ | --------------------- | ----------------- |
@@ -96,7 +96,7 @@ Para a comparação entre os programas foi utilizado o cluster `chococino`, roda
 
 Rodando com apenas um processo/thread o programa com MPI serial foi o que se saiu melhor, sendo seguido de perto pelo OMP e pelo fractal original. O mais lento foi o MPI com escrita paralela, com quase 30s de diferença em relação ao programa mais rápido.
 
-#### Tabela de comparação com 2 processos/threads
+#### Tabela de comparação com 2 processos/threads:
 
 | Programa           | QTD Processos/Threads | Tempo de Execução |
 | ------------------ | --------------------- | ----------------- |
@@ -106,7 +106,7 @@ Rodando com apenas um processo/thread o programa com MPI serial foi o que se sai
 
 Na execução com 2 processos o programa MPI serial diminuiu o tempo de exeção quase pela metade em relação ao teste anterior, e continou se saindo bem melhor do que o MPI paralelo. Além disso, o programa com OMP também melhorou bastante com 2 threads, chegando a um tempo bem próximo ao MPI serial.
 
-#### Tabela de comparação com 4 processos/threads
+#### Tabela de comparação com 4 processos/threads:
 
 | Programa           | QTD Processos/Threads        | Tempo de Execução |
 | ------------------ | ---------------------------- | ----------------- |
@@ -115,3 +115,9 @@ Na execução com 2 processos o programa MPI serial diminuiu o tempo de exeção
 | fractal_omp        | 4 threads cm1                | 0m31.520s         |
 
 Com 4 processos/threads os programas MPI serial e OpenMP abaixaram bem pouco seus tempos de execução em comparação com os testes com 2 processos/threads. Em contrapartida, o programa MPI paralelo diminui seu tempo de execução quase pela metade, superando todos os outros.
+
+### Questão 5:
+
+Para a questão 5, foi apenas adicionado um pragma `parallel for` no primeiro `for` da função `selection_sort`, com a intenção de paralelizar a execução do algoritmo, tornando-o mais rápido.
+
+O arquivo com a questão encontra-se em: [selection_sort_omp](selection_sort/ordena_vetor_omp.c).
